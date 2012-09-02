@@ -2,13 +2,39 @@
 <html>
 <head>
   <title>Creatief Schrijven | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+	<!--[if lt IE 9]>
+	<script scr="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[endif]-->
 </head>
 <body>
-
-<%= yield %>
-
+	<header class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<nav>
+					<%= link_to image_tag('logo.png', :size  => "50x50"), "#" %>
+					<ul class="nav pull-right">
+						<li><%= link_to "Nieuws", '#' %></li>
+						<li><%= link_to "Cursussen", '#' %></li>
+						<li><%= link_to "Wedstrijden", '#' %></li>
+						<li class="dropdown"><%= link_to "Schrijfadvies", '#', data: {toggle: "dropdown"}, class: "dropdown-toggle" %></li>
+							<ul class="dropdown-menu">
+								<li>manuscriptbeoordeling</li>
+								<li>contacteer onze schrijfconsulent</li>
+							</ul>
+						</li>
+						<li><%= link_to "Kennisbank", '#' %></li>
+						<li><%= link_to "Contact", '#' %></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="container">	
+		<%= yield %>
+	</div>
+	<%= render 'layouts/footer' %>
 </body>
 </html>

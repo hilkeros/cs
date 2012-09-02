@@ -1,48 +1,59 @@
 = provide(:title, 'Home')
 
-.splash
-  %h1 Creatief Schrijven is hét aanspreekpunt voor iedereen die schrijven niet laten kan
-  = link_to 'Schrijf je in op onze nieuwsbrief »', '#'
-  %br/
-
-.home-nieuws
-  %h2= link_to 'Dichten in de Prinsentuin'
-  %p
-    Van 25 tot en met 27 juli vindt de 15de editie van Poëziefestival Dichters in de Prinsentuin plaats in Groningen. Wil je je eigen gedichten voordragen voor een groot en geïnteresseerd publiek, dan is dit je kans. Schrijf je voor 1 maart in, en wie weet sta jij op 26 of 27 juli in de loofgangen van de Prinsentuin. Het festival geeft jaarlijks een podium aan 80 bekende en minder bekende dichters. Ben je er nog niet geweest, dan geeft dit filmpje je een idee van wat je mag verwachten.
-    = link_to 'Lees meer', '#'
+.row
+  .span6
+    %h1 Creatief Schrijven is hét aanspreekpunt voor iedereen die schrijven niet laten kan
+    %br/
+    .a.btn.btn-primary.btn-large Schrijf je in op onze nieuwsbrief »
+    %br/
+    %br/
+    =image_tag 'alledagendichten.png', :size  => '200x200'
+      
+  .span6
+    .home-nieuws
+      %h2= link_to 'Dichten in de Prinsentuin', '#'
+      %p
+        Van 25 tot en met 27 juli vindt de 15de editie van Poëziefestival Dichters in de Prinsentuin plaats in Groningen. Wil je je eigen gedichten voordragen voor een groot en geïnteresseerd publiek, dan is dit je kans. Schrijf je voor 1 maart in, en wie weet sta jij op 26 of 27 juli in de loofgangen van de Prinsentuin. Het festival geeft jaarlijks een podium aan 80 bekende en minder bekende dichters. Ben je er nog niet geweest, dan geeft dit filmpje je een idee van wat je mag verwachten.
+        = link_to 'Lees meer', '#'
 	
-  %h2= link_to 'Gratis workshop poëzie on stage'
-  %p
-    Is je poëzie klaar voor de stap naar een levensecht publiek? Stijn Vranken en Koen de Smet helpen je om in groep een boeiende voorstelling te maken. Die brengen jullie tijdens de opening van de tentoonstelling Divers Pluimage op zaterdag 28 april (Oude Beurs, Hofstraat 15, 2000 Antwerpen) De tentoonstelling kadert heeft plaats binnen het Liefhebber Amateurkunstenfestival 2012.
-    = link_to 'Lees meer', '#'
+      %h2= link_to 'Gratis workshop poëzie on stage', '#'
+      %p
+        Is je poëzie klaar voor de stap naar een levensecht publiek? Stijn Vranken en Koen de Smet helpen je om in groep een boeiende voorstelling te maken. Die brengen jullie tijdens de opening van de tentoonstelling Divers Pluimage op zaterdag 28 april (Oude Beurs, Hofstraat 15, 2000 Antwerpen) De tentoonstelling kadert heeft plaats binnen het Liefhebber Amateurkunstenfestival 2012.
+        = link_to 'Lees meer', '#'
 	
-  = link_to 'Meer nieuwsberichten', '#'
+      .btn= link_to 'Meer nieuwsberichten »', '#'
 
-
-.acties
-  #schrijfcursussen
+%br/
+%br/
+.row
+  .span4
     %h3
       %strong Schrijfcursussen
     %p
-      = link_to 'Op zoek naar een cursus? »', '#'
+      .btn= link_to 'Op zoek naar een cursus? »', '#'
+      %br/
+      %br/
       %ul
         %li= link_to 'Zakelijk Schrijven', '#'
         %li= link_to 'Schrijven voor het web', '#'
         %li= link_to 'Poëzie voor beginners', '#'
-  #schrijfwedstrijden
+  .span4
     %h3
       %strong Schrijfwedstrijden
     %p
-      = link_to 'Op zoek naar een wedstrijd? »', '#'
+      .btn= link_to 'Op zoek naar een wedstrijd? »', '#'
+      %br/
+      %br/
       %ul
         %li= link_to 'Haikuwedstrijd', '#'
         %li= link_to 'Kunstbende TXT', '#'
         %li= link_to 'Prijzen van de provincie Oost-Vlaanderen voor Letterkunde', '#'
 			
-  #informatie
+  .span4
     %h3
       %strong Informatie
     %p
+      %br/
       Hier vind je snelle links naar informatie over:
       %ul
         %li= link_to 'Manuscriptbeoordeling', '#'
