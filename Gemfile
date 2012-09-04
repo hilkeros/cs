@@ -5,7 +5,7 @@ gem 'rails', '3.1.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'inherited_resources'
 gem 'haml-rails', git: 'https://github.com/indirect/haml-rails.git'
@@ -34,6 +34,8 @@ group :development, :test do
   gem 'ruby-debug19', require: 'ruby-debug'
 
   gem 'thin'
+  
+  gem 'sqlite3'
 end
 
 group :test do
