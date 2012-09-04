@@ -34,12 +34,15 @@ group :development, :test do
   gem 'ruby-debug19', require: 'ruby-debug'
 
   gem 'thin'
+  
 end
 
 group :test do
   gem 'rspec'
   gem 'capybara'
 end
+
+gem 'annotate', '2.5.0', group: :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

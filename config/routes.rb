@@ -1,7 +1,12 @@
 Cs::Application.routes.draw do
+  
   root to: 'pages#home'
 
   match '/contact',  to: 'pages#contact'
+  
+  namespace :admin do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
