@@ -1,2 +1,11 @@
-%h1 Nieuws
-%p= @posts
+= provide(:title, 'Nieuwsberichten')
+
+%h1 Nieuwsberichten
+
+%ul
+	= @posts.each do |post|
+		%li
+			=link_to post.title, admin_post_path(post)
+			= post.created_at.strftime("%d/%m/%Y")
+			= link_to "Bewerken", edit_admin_post_path(post)
+			= link_to "Verwijderen", '#'

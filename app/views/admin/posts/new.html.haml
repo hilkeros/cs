@@ -1,14 +1,4 @@
 = provide(:title, 'Nieuw nieuwsbericht')
 %h1 Nieuw nieuwsbericht
 
-.row
-	.span6
-		= form_for(@post, :url => admin_posts_path) do |f|
-			= render 'layouts/shared/error_messages'
-			= f.label "Titel"
-			= f.text_field :title
-			
-			= f.label "Bericht"
-			= f.text_area :body
-			
-			= f.submit "Opslaan"
+= render "form"
