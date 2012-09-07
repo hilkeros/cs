@@ -3,7 +3,7 @@
 		.alert.alert-error
 			Het formulier bevat de volgende fout(en):
 			#ul
-				= @post.errors.full_messages.each do |msg|
+				- @post.errors.full_messages.each do |msg|
 					#li
 						* 
 						= msg

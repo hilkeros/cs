@@ -1,11 +1,21 @@
 = provide(:title, 'Nieuwsberichten')
 
 %h1 Nieuwsberichten
-
-%ul
-	= @posts.each do |post|
-		%li
-			=link_to post.title, admin_post_path(post)
-			= post.created_at.strftime("%d/%m/%Y")
-			= link_to "Bewerken", edit_admin_post_path(post)
-			= link_to "Verwijderen", '#'
+%p
+	.btn= link_to 'Niew nieuwsbericht »', new_admin_post_path
+	
+%table.table
+	%thead
+		%tr
+			%th Datum
+			%th Titel
+			%th Acties
+	%tbody
+		- @posts.each do |post|
+			%tr
+				%td= post.created_at.strftime("%d/%m/%Y")
+				%td= link_to post.title, admin_post_path(post)
+				%td
+					= link_to "Bewerken", edit_admin_post_path(post)
+					|					
+					= link_to "Verwijderen", admin_post_path(post), method: :delete, data: { confirm: "Nieuwsbericht verwijderen?" }
