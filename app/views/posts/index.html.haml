@@ -3,6 +3,7 @@
 %h1 Nieuws
 
 - @posts.each do |post|
-		%h2= post.title
+		.news_item
+		%h2.post_title= post.title
 		.date= post.created_at.strftime("%d/%m/%Y")
-		%p= post.body
+		%p.news_body= post.body

@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+$lightGray: #999;
+
 body {
 	padding-top: 70px;
 }
@@ -29,3 +31,21 @@ body {
   @extend .control-group;
   @extend .error;
  }
+
+/* news */
+
+.post_title {
+	color: #0088CC;
+}
+
+.date {
+	color: $lightGray;
+}
+
+.news_item {
+	margin-top: 50px;
+}
+
+.news_body {
+	padding-top: 15px;
+}
