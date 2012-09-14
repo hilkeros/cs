@@ -11,6 +11,7 @@ gem 'inherited_resources'
 gem 'haml-rails', git: 'https://github.com/indirect/haml-rails.git'
 gem 'paperclip', '~> 3.0'
 gem 'bootstrap-sass', '2.0.4'
+gem 'tinymce-rails'
 
 
 # Gems used only for assets and not required

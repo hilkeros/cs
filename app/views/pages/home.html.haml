@@ -14,7 +14,7 @@
       - @posts.each do |post|
         %h2= link_to post.title, nieuws_path
         %p
-          = post.body
+          = raw(post.body)
           = link_to 'Lees meer', nieuws_path
 
       .btn= link_to 'Meer nieuwsberichten »', nieuws_path

@@ -6,4 +6,4 @@
 		.news_item
 		%h2.post_title= post.title
 		.date= post.created_at.strftime("%d/%m/%Y")
-		%p.news_body= post.body
+		%p.news_body= raw(post.body)
