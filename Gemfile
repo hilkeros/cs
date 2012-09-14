@@ -36,11 +36,16 @@ group :development, :test do
   #gem 'thin'
   
   gem 'sqlite3'
+  
+  gem 'guard-rspec'
+  gem 'spork'
 end
 
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
 end
 
 group :production do

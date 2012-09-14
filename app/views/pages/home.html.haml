@@ -12,10 +12,10 @@
   .span6
     .home-nieuws
       - @posts.each do |post|
-        %h2= link_to post.title, 'nieuws_path'
+        %h2= link_to post.title, nieuws_path
         %p
           = post.body
-          = link_to 'Lees meer', 'nieuws_path'
+          = link_to 'Lees meer', nieuws_path
 
       .btn= link_to 'Meer nieuwsberichten »', nieuws_path
 
