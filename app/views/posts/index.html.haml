@@ -1,0 +1,9 @@
+= provide(:title, 'Nieuws')
+
+%h1 Nieuws
+
+- @posts.each do |post|
+		.news_item
+		%h2.post_title= post.title
+		.date= post.created_at.strftime("%d/%m/%Y")
+		%p.news_body= post.body

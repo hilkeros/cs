@@ -1,7 +1,16 @@
 Cs::Application.routes.draw do
+  
+  get "posts/index"
+
   root to: 'pages#home'
 
   match '/contact',  to: 'pages#contact'
+  match '/nieuws', to: 'posts#index'
+  
+  namespace :admin do
+    root :to => "posts#index"
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
