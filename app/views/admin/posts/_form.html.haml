@@ -1,12 +1,21 @@
 .row
 	.span6
-		= form_for(@post, :url => admin_posts_path) do |f|
+		= form_for([:admin, @post]) do |f|
 			= render 'layouts/shared/error_messages'
 			= f.label "Titel"
 			= f.text_field :title
+			
+			= f.label "Teaser"
+			= f.text_area :teaser, :class => "tinymce", :rows => "10"
+			%br/
 			
 			= f.label "Bericht"
 			= f.text_area :body, :class => "tinymce"
 			= tinymce
 			%br/
+			
+			= f.label "Publiceerdatum"
+			= f.datetime_select :publish_date, :default => Time.now
+			%br/
+			
 			= f.submit "Opslaan"

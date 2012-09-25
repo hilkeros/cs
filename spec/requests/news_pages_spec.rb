@@ -27,7 +27,9 @@ describe "NewsPages" do
     describe "with valid information" do
       before do
         fill_in "Titel",  with: "Dit is een nieuwe post"
+        fill_in "Teaser", with: "Dit is de teaser van de post"
         fill_in "Bericht",   with: "Dit is de tekst van de post"
+        fill_in "Publiceerdatum", with: Time.now
       end
       
       it "should create a post" do
@@ -54,9 +56,13 @@ describe "NewsPages" do
     describe "with valid information" do
       let(:new_title)   { "New Title" }
       let(:new_body)    { "New body" }
+      let(:new_teaser)  { "New teaser" }
+      let(:new_publish_date) { 2.days.ago }
       before do
         fill_in "Titel", with: new_title
         fill_in "Bericht", with: new_body
+        fill_in "Teaser", with: new_teaser
+        fill_in "Publiceerdatum", with: new_publish_date
         click_button "Bewaren"
       end
       
@@ -64,13 +70,15 @@ describe "NewsPages" do
       it { should have_selector('div.alert.alert-success') }
       specify { post.reload.title.should == new_title }
       specify { post.reload.body.should == new_body }
+      specify { post.reload.teaser.should == new_teaser }
+      specify { post.reload.publish_date.should == new_publish_date }
     end
   end
   
   describe "index" do
     before do
-      FactoryGirl.create(:post, title: "Titel 1", body: "Dit is een tekst")
-      FactoryGirl.create(:post, title: "Titel 2", body: "Dit is nog een tekst")
+      FactoryGirl.create(:post, title: "Titel 1", body: "Dit is een tekst", teaser: "Dit is de eerste teaser", publish_date: Time.now)
+      FactoryGirl.create(:post, title: "Titel 2", body: "Dit is nog een tekst", teaser: "Dit is de tweede teaser", publish_date: 2.days.ago)
       visit admin_posts_path
     end
     

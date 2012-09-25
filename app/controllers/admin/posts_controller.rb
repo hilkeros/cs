@@ -1,5 +1,6 @@
 class Admin::PostsController < InheritedResources::Base
+  
   def index
-    @posts = Post.all( :order => "created_at DESC")
+    @posts = Post.all( :order => "publish_date DESC")
   end
 end

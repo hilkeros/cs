@@ -10,8 +10,10 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :teaser, :publish_date
   
   validates :title, presence: true
   validates :body, presence: true
+  validates :teaser, presence: true
+  validates :publish_date, presence: true
 end
